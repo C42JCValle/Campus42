@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:21:07 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:25 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/09 15:34:04 by gacel             #+#    #+#             */
+/*   Updated: 2024/04/09 18:01:58 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+int ft_tolower(int c)
 {
-    if ((c >= 0 && c <= 127))
+    if (c >= 'A' && c <= 'Z')
     {
-        return (1);
+        c = c + 32;
     }
+    return (c);
+}
+
+#include <stdio.h>
+int main(void)
+{
+    char c;
+
+    c = ft_tolower('U');
+    printf("%s\n",&c);
     return (0);
 }

@@ -3,17 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:46:06 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/09 16:44:30 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/09 17:54:23 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int ft_strlen(const char *str)
 {
     int c;
 
     c = 0;
     while(str[c] != '\0')
+    {
+        c++;
+    }
+    return (c);
 }

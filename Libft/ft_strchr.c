@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:21:07 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:25 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/09 18:40:16 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/09 19:47:17 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+int ft_strchr(char n, char *str)
 {
-    if ((c >= 0 && c <= 127))
+    int c;
+
+    c = 0;
+    while(str[c] != '\0')
     {
-        return (1);
+        if(str[c] == n)
+        {
+            return (c);
+        }
+        c++;    
     }
     return (0);
+}
+
+#include <stdio.h>
+int main (void)
+{
+    
+printf("%d",ft_strchr('C',"Juan Carlos"));
+return (0);
 }
