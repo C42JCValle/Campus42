@@ -3,35 +3,38 @@
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int c;
-    int d;
+    int i;
 
-    c = 0;
-    d = 0;
-    while((s1[c] != '\0') && n >= s1[c])
-    {
-        if(s1[c] == s2[d])
-        {
-            c++;
-            d++;
-        }
-        return (s1[c] - s2[d]);
-    }
-    return (s1[c] - s2[d]);
+    i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	if (i == n)
+	{
+		return (0);
+	}
+	return (s1[i] - s2[i]);
 }
 
-int main (int argc, char **argv)
+#include <stdio.h>
+int	main(void)
 {
-    if (argc != '3')
-    {
-        return (1);
-    }
-    size_t n;
+	char str1[] = "Juan";
+	char str2[] = "Joan";
+	char str3[] = "Otros";
+    size_t n; 
 
-    n = argv[3][0];
-    printf("%d\n", ft_strncmp(argv[1], argv[2], n));
-    return(0);    
-
+	n = 2;
+    printf("Comparando '1' con '2': %d\n", ft_strncmp(str1, str2, n));
+	printf("Comparando '2' con '3': %d\n", ft_strncmp(str2, str3, n));
+	
+	return (0);
 }
+
 
 
