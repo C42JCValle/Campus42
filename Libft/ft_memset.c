@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 18:40:16 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/09 19:47:17 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/10 18:12:24 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strchr(char n, char *str)
+#include<string.h>
+#include<stdio.h>
+
+void *ft_memset(void *b, int c, size_t len)
 {
-    int c;
+    unsigned char *str = b;
+    size_t i;
+    
 
-    c = 0;
-    while(str[c] != '\0')
+    i = 0;
+    while(i < len && str[i] != '\0')
     {
-        if(str[c] == n)
-        {
-            return (c);
-        }
-        c++;    
+        str[i] = (unsigned char)c;
+        i++;
     }
-    return (0);
-}
+    return (str);
+   
+}    
 
-#include <stdio.h>
 int main (void)
 {
+    char datos[] = "AAAA";
+    int c = 'Z';
+    size_t len = 17;
+    printf("%s", ft_memset(datos, c, len));
+    return (0);
     
-printf("%d",ft_strchr('C',"Juan Carlos"));
-return (0);
 }
