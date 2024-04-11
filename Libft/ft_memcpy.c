@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 12:06:59 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/11 14:25:09 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
 #include<stdio.h>
-#include<stdlib.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *str = b;
+    unsigned char * d = dest;                             //void src src= (char *)src
+    const unsigned char *o = src;
     size_t i;
     
-
+   
     i = 0;
-    while(i < len && str[i] != '\0')
+
+    if (dest == NULL || src == NULL)
+    { 
+        return NULL;
+    }
+    
+    while(i < n)
     {
-        str[i] = (unsigned char)c;
+        d[i] = o[i];
         i++;
     }
-    return (str);
-
-}    
-
+ 
+    return (dest);
+}
 int main (void)
 {
-    char datos[4] = "AAAA";
-    int c = 'Z';
-    size_t len = 17;
-    printf("%s", ft_memset(datos, c, len));
+    char destino[] = "1234567";
+    const char *origen = "ABCDEFG";
+    size_t x;
+
+    x = 8;
+    printf("%s", ft_memcpy(destino,origen,x));
     return (0);
-    
 }
