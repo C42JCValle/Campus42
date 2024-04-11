@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:05:34 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:28 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:15:00 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,5 @@ int ft_isalpha (int c)
     {
         return (1);
     }
-    return (0);
-}
-
-
-#include <stdio.h>
-int main (void)
-{
-    int c;
-
-    c = ft_isalpha('7');
-    printf("\n\n%d\n", c);
     return (0);
 }

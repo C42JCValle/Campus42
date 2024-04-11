@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 14:25:09 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:12:47 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,4 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     }
  
     return (dest);
-}
-int main (void)
-{
-    char destino[] = "1234567";
-    const char *origen = "ABCDEFG";
-    size_t x;
-
-    x = 8;
-    printf("%s", ft_memcpy(destino,origen,x));
-    return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:41:29 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:27 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:14:51 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,3 @@ int ft_isalpha (int c)
     }
     return (0);
 }
-
-#include <stdio.h>
-int main (void)
-{
-    int c;
-
-    c = ft_isalpha('6');
-    printf("\n\n%d\n", c);
-    return (0);
-}
-
-   
