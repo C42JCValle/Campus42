@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:34:04 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:21 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:32:50 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int ft_toupper(int c)
     return (c);
 }
 
-#include <stdio.h>
-int main(void)
-{
-    char c;
-
-    c = ft_toupper('u');
-    printf("%s\n",&c);
-    return (0);
-}

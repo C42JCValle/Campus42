@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:34:04 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/10 13:35:24 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:34:26 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,4 @@ int ft_tolower(int c)
         c = c + 32;
     }
     return (c);
-}
-
-#include <stdio.h>
-int main(void)
-{
-    char c;
-
-    c = ft_tolower('U');
-    printf("%s\n",&c);
-    return (0);
 }

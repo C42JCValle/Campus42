@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 22:39:35 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/11 11:08:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:37:31 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,3 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (s1[i] - s2[i]);
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	char str1[] = "Juan";
-	char str2[] = "Joan";
-	char str3[] = "Otros";
-    size_t n; 
-
-	n = 2;
-    printf("Comparando '1' con '2': %d\n", ft_strncmp(str1, str2, n));
-	printf("Comparando '2' con '3': %d\n", ft_strncmp(str2, str3, n));
-	
-	return (0);
-}
-
-
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:40:16 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 11:08:22 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:34:59 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,4 @@ int ft_strchr(char n, char *str)
     return (c);
    
 
-}
-
-#include <stdio.h>
-int main (void)
-{
-    
-printf("%d",ft_strchr('Z',"ZJuan Carlos"));
-return (0);
 }
