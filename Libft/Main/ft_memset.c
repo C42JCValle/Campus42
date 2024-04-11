@@ -1,4 +1,4 @@
-
+#include <string.h>
 int main (void)
 {
     char datos[4] = "AAAA";
