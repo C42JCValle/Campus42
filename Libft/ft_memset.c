@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 12:06:59 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:39:04 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,3 @@ void *ft_memset(void *b, int c, size_t len)
     return (str);
 
 }    
-
-int main (void)
-{
-    char datos[4] = "AAAA";
-    int c = 'Z';
-    size_t len = 17;
-    printf("%s", ft_memset(datos, c, len));
-    return (0);
-    
-}
