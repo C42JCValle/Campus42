@@ -17,6 +17,8 @@ int ft_toupper(int c);
 // Funciones de memoria
 void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memset(void *s, int c, size_t n);
+void ft_bzero(void *s, size_t n);
+
 
 // Funciones de cadena
 char *ft_strchr(const char *s, int c);
