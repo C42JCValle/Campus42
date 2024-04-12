@@ -6,12 +6,11 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 22:39:20 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/11 15:37:52 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/12 12:57:35 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <stddef.h>
 
 char *ft_strchr(const char *s, int c) 
 {
@@ -23,5 +22,5 @@ char *ft_strchr(const char *s, int c)
         }
         s++;
     }
-    return NULL;
+    return (NULL);
 }

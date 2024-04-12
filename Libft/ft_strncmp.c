@@ -6,12 +6,11 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 22:39:35 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/11 15:37:31 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/12 12:57:49 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <stddef.h>
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {

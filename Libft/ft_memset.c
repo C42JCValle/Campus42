@@ -6,13 +6,11 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 15:39:04 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/12 12:56:53 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
-#include<stdlib.h>
+#include <stddef.h>
 
 void *ft_memset(void *b, int c, size_t len)
 {

@@ -6,12 +6,11 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/11 15:12:47 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/12 12:56:35 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
+#include <stddef.h>
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
