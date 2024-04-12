@@ -22,7 +22,7 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
     return (src_len);
 }
 
-int main(void) 
+/*int main(void) 
 {
     char src[] = "Hello, world!";
     char dest[] = "Esto es una prueba de copia strlcpy";
@@ -33,3 +33,4 @@ int main(void)
     printf("dest: %s\n", dest);
     return 0;
 }
+*/
