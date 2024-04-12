@@ -37,8 +37,9 @@ size_t my_strlcat(char *dest, const char *src, size_t size) {
 }
 
 int main() {
-    char dest[20] = "Hello, ";
-    const char *src = "WorldWorldworld!";
+    char dest[] = "Hola";
+    const char *src = "Mundo";
+    size_t n = 10;
 
     // Concatenar la cadena src a dest usando my_strlcat
     size_t concatenated = my_strlcat(dest, src, sizeof(dest));
