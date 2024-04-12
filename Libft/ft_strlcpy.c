@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-size_t my_strlcpy(char *dest, const char *src, size_t size) 
+size_t ft_strlcpy(char *dest, const char *src, size_t size) 
 {
     size_t i = 0;
     size_t src_len = 0;
@@ -22,14 +22,14 @@ size_t my_strlcpy(char *dest, const char *src, size_t size)
     return (src_len);
 }
 
-int main() 
+int main(void) 
 {
     char src[] = "Hello, world!";
     char dest[] = "Esto es una prueba de copia strlcpy";
     size_t n;
 
     n = 4;
-    my_strlcpy(dest, src, n);
+    ft_strlcpy(dest, src, n);
     printf("dest: %s\n", dest);
     return 0;
 }
