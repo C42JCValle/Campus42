@@ -1,10 +1,14 @@
+#include <string.h>
+#include <stddef.h>
 #include "libft.h"
 
-int main(void)
+int main() 
 {
-    char c;
+    const char src[] = "Hola";
+    char dest[20] = "Mundo";
+    size_t n = 10;
 
-    c = ft_tolower('U');
-    printf("%s\n",&c);
+    size_t copied = ft_strlcat(dest, src, n);
+    printf("dest: %s\n", dest);
     return (0);
 }

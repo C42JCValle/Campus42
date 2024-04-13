@@ -33,14 +33,3 @@ size_t ft_strlcat(char *dest, const char *src, size_t size)
 
     return (d);
 }
-
-int main(void) 
-{
-    const char src[] = "Hola";
-    char dest[20] = "Mundo";
-    size_t n = 10;
-
-    size_t copied = ft_strlcat(dest, src, n);
-    printf("dest: %s\n", dest);
-    return 0;
-}

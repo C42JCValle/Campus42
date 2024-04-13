@@ -1,14 +1,15 @@
 #include <string.h>
 #include <stddef.h>
+#include "Libft.h"
 
 int main(void) 
 {
-    char src[] = "Hello, world!";
-    char dest[] = "Esto es una prueba de copia strlcpy";
-    size_t n;
+    const char src[] = "Hola";
+    char dest[20] = "Mundo";
+    size_t n = 10;
 
-    n = 4;
-    ft_strlcpy(dest, src, n);
+    size_t copied = ft_strlcat(dest, src, n);
     printf("dest: %s\n", dest);
     return 0;
 }
+
