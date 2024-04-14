@@ -1,14 +1,16 @@
+#include <stdio.h>
 #include <string.h>
-#include <stddef.h>
 #include "libft.h"
 
-int main() 
+int main (void)
 {
-    const char src[] = "Hola";
-    char dest[20] = "Mundo";
-    size_t n = 10;
+    char destino[20] = "1234567890";
+    const char origen[] = "ABCDEFG";
+    size_t x;
 
-    size_t copied = ft_strlcat(dest, src, n);
-    printf("dest: %s\n", dest);
+    x = 8;
+    char *resultado = ft_memcpy(destino,origen,x);
+    
+    printf("%s",resultado );
     return (0);
 }
