@@ -3,10 +3,10 @@
 
 int main() 
 {
-    char origen[] = "ABCDEFGHIJ";
-    char destino[] = "ABCDEFGHIJ";
-    size_t n = 4;
-    printf("%s", memmove(origen + 3, origen, n));
+    char origen[] = "H@l@ Mund@";
+    char destino[] = "Hola Mundo Cruel";
+    size_t n = 7;
+    printf("%s", (char *)memmove(destino, origen, n));
             
     return 0;
 }

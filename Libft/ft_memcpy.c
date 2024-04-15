@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 13:47:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:52:51 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,36 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char * d = dest;                             //void src src= (char *)src
-    const unsigned char *o = src;
-    size_t i;
-    size_t j;
-    
-   
-    i = 0;
-    j = 0;
     if (dest == NULL || src == NULL)
     { 
         return NULL;
     }
+    unsigned char * d = dest;                             //void src src= (char *)src
+    const unsigned char *o = src;
+    size_t i;
     
+    i = 0;
     while(i < n)
     {
         d[i] = o[i];
         i++;
     }
-    j = i;
-    if (n < j)
+    if (n < i)
     {
         d[i] = '\0';
     }
     return (dest);
 }
-
-#include <string.h>
+/*
 #include <stdio.h>
+#include <string.h>
 
-int main (void)
-{
-    char destino[] = "1234567";
-    const char *origen = "ABCD";
-    size_t x;
 
-    x = 5;
-    printf("%s", ft_memcpy(destino,origen,x));
-    return (0);
-} 
+
+int main() {
+    char buffer[] = "Hello, world!";
+    ft_memcpy(buffer + 5, buffer, 7);
+    printf("%s\n", buffer);
+    return 0;
+}
+*/

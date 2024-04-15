@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char origen[] = "ABCDEFGHIJ";
-    char destino[] = "BBBBBBBBBB";
+int main() 
+{
+    char origen[] = "H@l@ Mund@";
+    char destino[] = "Hola Mundo Cruel";
+    size_t n = 7;
+    printf("%s", (char *)memcpy(destino, origen, n));
 
-    // Copiamos los datos del origen al destino
-     char *result = memcpy(destino, origen, 7);
-
-    printf("Destino: %s\n", result);
 
     return 0;
 }

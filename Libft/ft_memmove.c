@@ -1,32 +1,46 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 13:23:46 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 13:31:18 by jvalle-d         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stddef.h>
 
-#include <string.h>
-#include <stdio.h>
-
-void *ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-    unsigned char *destino = dst;
-    unsigned const char *origen = src;
-    size_t n = 0;
-    size_t j = 0;
+    unsigned char *d = dest;
+    const unsigned char *s = src;
 
-    if (dest == NULL || src == NULL)
-    { 
-        return NULL;
+    if (dest == src || n == 0)
+        return dest;
+
+    // Verificar si las regiones de memoria se solapan
+    if (d < s && d + n > s)
+    {
+        // Copiar de src a dest de principio a fin
+        while (n--)
+            *d++ = *s++;
     }
-    
-    
-    
-    
-    
+    else if (s < d && s + n > d)
+    {
+        // Copiar de src a dest de fin a principio
+        d += n;
+        s += n;
+        while (n--)
+            *--d = *--s;
+    }
+    else
+    {
+        // No hay solapamiento, copiar directamente
+        while (n--)
+            *d++ = *s++;
+    }
+
+    return dest;
 }
+/*#include <stdio.h>
+#include <string.h>
+
+
+
+int main() {
+    char buffer[] = "Hello, world!";
+    ft_memmove(buffer + 5, buffer, 7);
+    printf("%s\n", buffer);
+    return 0;
+}
+*/
