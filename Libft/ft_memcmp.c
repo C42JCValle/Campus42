@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 18:40:16 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 12:34:08 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/15 11:18:36 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/15 11:45:50 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strrchr(char n, char *str)
+#include <string.h>
+
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int c;
+    const unsigned char *c1 = s1;
+    const unsigned char *c2 = s2;
+    size_t c;
+    size_t d;
 
     c = 0;
-    while(str[c] != '\0')
+    d = 0;
+    while(c1[c] == c2[d] && c < n)
     {
         c++;
+        d++;
     }
-    while(str[c] != n)
+    if (c1[c] != c2[d])
     {
-        c--;
-        if (c < 0)
-        {
-            return(0);
-        }
-
-    }
-    return (c);
-   
-
+        return (c1[c] - c2[d]);
+    }   
+    return (0);
 }
