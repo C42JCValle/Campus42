@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 13:07:30 by jvalle-d             #+#    #+#          */
-/*   Updated: 2024/04/15 13:20:08 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/15 13:23:46 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/15 13:31:18 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*str;
-	size_t	c;
+    unsigned char *destino = dst;
+    unsigned const char *origen = src;
+    size_t n = 0;
+    size_t j = 0;
 
-	str = s;
-	c = 0;
-	while (c < n)
-	{
-		str[c] = '\0';
-		c++;
-	}
+    if (dest == NULL || src == NULL)
+    { 
+        return NULL;
+    }
+    
+    
+    
+    
+    
 }

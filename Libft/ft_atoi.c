@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 13:07:30 by jvalle-d             #+#    #+#          */
-/*   Updated: 2024/04/15 13:20:08 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/03/17 13:59:29 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/15 13:11:37 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+int	ft_atoi(const char *str)
 {
-	char	*str;
-	size_t	c;
+	int	result;
+	int	sign;
 
-	str = s;
-	c = 0;
-	while (c < n)
+	result = 0;
+	sign = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		str[c] = '\0';
-		c++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + *str - '0';
+		str++;
+	}
+	return (result * sign);
 }

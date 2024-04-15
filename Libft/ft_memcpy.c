@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 11:01:41 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:47:18 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,17 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     }
     return (dest);
 }
+
+#include <string.h>
+#include <stdio.h>
+
+int main (void)
+{
+    char destino[] = "1234567";
+    const char *origen = "ABCD";
+    size_t x;
+
+    x = 5;
+    printf("%s", ft_memcpy(destino,origen,x));
+    return (0);
+} 
