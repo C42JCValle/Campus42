@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 22:42:47 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/14 23:15:52 by gacel            ###   ########.fr       */
+/*   Created: 2024/04/14 22:42:47 by jvalle-d              #+#    #+#             */
+/*   Updated: 2024/04/15 11:01:11 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,3 @@ void *ft_memchr(const void *s, int c, size_t n)
     return (NULL);
     
 }
-
-int main ()
-{
-    const unsigned char *cadena = "Juan Carlos";
-    char buscar = 'a';
-    size_t bits = 12;   
-    void  *result = ft_memchr(cadena, buscar, bits);
-    printf("%p",result);
-    return (0);
-    
-}
-
-    
-    
-    
-    
-    
-    
