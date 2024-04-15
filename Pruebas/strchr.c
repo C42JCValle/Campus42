@@ -19,6 +19,8 @@ char *ft_strchr(const char *s, int c)
 
 int main (void)
 {
-    printf("%s", ft_strchr("Juan", 117));
+    int x = (char)'n';
+    
+    printf("%s", ft_strchr("Juan", x));
     return (0);
 }

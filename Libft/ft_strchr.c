@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+
+#include <stdio.h>
 
 char *ft_strchr(const char *s, int c) 
 {
@@ -23,4 +24,12 @@ char *ft_strchr(const char *s, int c)
         s++;
     }
     return (NULL);
+}
+
+int main(void)
+{
+    char *datos = ft_strchr("Juan", '3');
+    
+    printf("%p\n", datos);
+    return 0;
 }

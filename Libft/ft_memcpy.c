@@ -6,29 +6,31 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 19:30:57 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/15 19:43:21 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char * d = dest;                             //void src src= (char *)src
-    const unsigned char *o = src;
-    size_t i;
-    
-    i = 0;
-    while(i < n)
-    {
-        d[i] = o[i];
-        i++;
-    }
-    if (n < i)
-    {
-        d[i] = '\0';
-    }
-    return (dest);
+	unsigned char				*d;
+	const unsigned char			*o;
+	size_t						i;
+
+	d = dest;
+	o = src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = o[i];
+		i++;
+	}
+	if (n < i)
+	{
+		d[i] = '\0';
+	}
+	return (dest);
 }
 /*
 #include <stdio.h>
