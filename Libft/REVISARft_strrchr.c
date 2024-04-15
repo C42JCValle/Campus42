@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:40:16 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 12:34:08 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:39:39 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strrchr(char n, char *str)
+char *ft_strrchr(const char *str, int c)
 {
     int c;
 
@@ -24,11 +24,17 @@ int ft_strrchr(char n, char *str)
         c--;
         if (c < 0)
         {
-            return(0);
+            return("NULL");
         }
 
     }
-    return (c);
-   
+    return (char *)c;
+ }
 
+ #include <stdio.h>
+int main (void)
+{
+    
+printf("%s",ft_strrchr('Z',"ZJuan Carlos"));
+return (0);
 }

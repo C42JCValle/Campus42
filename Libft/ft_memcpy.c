@@ -6,7 +6,7 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 17:52:51 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/15 19:30:57 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    if (dest == NULL || src == NULL)
-    { 
-        return NULL;
-    }
     unsigned char * d = dest;                             //void src src= (char *)src
     const unsigned char *o = src;
     size_t i;
