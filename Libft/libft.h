@@ -23,6 +23,7 @@ void *ft_memset(void *s, int c, size_t n);
 void ft_bzero(void *s, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
 void *ft_memset(void *b, int c, size_t len);
+void *ft_calloc(size_t num, size_t size);
 
 
 
