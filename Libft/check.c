@@ -1,7 +1,9 @@
-int main(void)
+#include "libft.h"
+int main ()
 {
-    char *datos = ft_strrchr("Juan", 'r');
-    
-    printf("%p\n", datos);
-    return 0;
+    int result;
+
+    result = ft_atoi("-32");
+    printf("%d",result);
+    return (0);
 }

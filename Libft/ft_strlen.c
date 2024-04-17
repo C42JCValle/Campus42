@@ -6,13 +6,13 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:46:06 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 13:14:33 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:55:14 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	c;
 
