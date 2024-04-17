@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 22:39:20 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 13:14:03 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:37:51 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*int main(void)
+/*
+int main(void)
 {
-    char *datos = ft_strchr("Juan", '3');
+    char *datos = ft_strchr("JuJan", 'J');
     
-    printf("%p\n", datos);
+    printf("%s\n", datos);
     return 0;
 }
 */
