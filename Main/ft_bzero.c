@@ -1,4 +1,6 @@
-/*int main ()
+#include "libft.h"
+
+int main ()
 {
     char string[] = "Juan Carlos"; // Usar un array en lugar de una cadena literal
     size_t numero = 3;
@@ -15,4 +17,3 @@
     
     return 0;
 }
-*/
