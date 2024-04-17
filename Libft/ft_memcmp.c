@@ -6,11 +6,11 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:18:36 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 13:04:48 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:56:16 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

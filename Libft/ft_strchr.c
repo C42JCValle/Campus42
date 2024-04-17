@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 22:39:20 by jvalle-d             #+#    #+#          */
-/*   Updated: 2024/04/15 11:02:08 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/10 22:39:20 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/17 13:14:03 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

@@ -6,11 +6,11 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:02:51 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 11:17:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:14:14 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

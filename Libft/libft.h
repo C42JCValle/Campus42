@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 // Funciones de caracteres
 int ft_isalnum(int c);

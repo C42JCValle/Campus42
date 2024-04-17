@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:02:59 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/16 18:05:05 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/17 13:14:08 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)

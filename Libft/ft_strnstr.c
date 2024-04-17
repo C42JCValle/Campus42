@@ -6,11 +6,11 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:52:02 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 11:37:15 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:14:48 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {

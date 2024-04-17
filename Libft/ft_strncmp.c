@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 22:39:35 by jvalle-d             #+#    #+#          */
-/*   Updated: 2024/04/17 11:21:50 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/10 22:39:35 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/17 13:14:39 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

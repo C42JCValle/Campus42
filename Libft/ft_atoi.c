@@ -6,11 +6,11 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:59:29 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/15 13:11:37 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:11:33 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

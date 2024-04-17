@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 22:42:47 by jvalle-d              #+#    #+#         */
-/*   Updated: 2024/04/15 11:01:11 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/14 22:42:47 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/17 13:12:50 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

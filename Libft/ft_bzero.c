@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 13:07:30 by jvalle-d             #+#    #+#          */
-/*   Updated: 2024/04/15 13:20:08 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/12 13:07:30 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/17 13:11:44 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
