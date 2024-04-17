@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 22:39:35 by jvalle-d             #+#    #+#             */
-/*   Updated: 2024/04/15 11:02:41 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/10 22:39:35 by jvalle-d             #+#    #+#          */
+/*   Updated: 2024/04/17 11:21:50 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		if (s1[i] != s2[i])

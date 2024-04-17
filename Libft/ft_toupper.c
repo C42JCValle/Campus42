@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 15:34:04 by jvalle-d             #+#    #+#             */
-/*   Updated: 2024/04/15 11:02:18 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/09 15:34:04 by jvalle-d             #+#    #+#          */
+/*   Updated: 2024/04/17 11:47:20 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-    {
-        c = c - 32;
-    }
-    return (c);
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - 32;
+	}
+	return (c);
 }
-

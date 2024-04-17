@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 15:46:06 by jvalle-d             #+#    #+#             */
-/*   Updated: 2024/04/09 17:54:23 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/09 15:46:06 by jvalle-d             #+#    #+#          */
+/*   Updated: 2024/04/17 11:19:32 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-    int c;
+	int	c;
 
-    c = 0;
-    while(str[c] != '\0')
-    {
-        c++;
-    }
-    return (c);
+	c = 0;
+	while (str[c] != '\0')
+	{
+		c++;
+	}
+	return (c);
 }
