@@ -6,26 +6,29 @@
 /*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:30:05 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/17 16:19:14 by gacel            ###   ########.fr       */
+/*   Updated: 2024/04/19 12:13:00 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t num, size_t size)
+void	*ft_calloc(size_t num, size_t size)
 {
-    void *p;
-    p = malloc(num * size);
-    
-    if (!p)
-        return NULL;
+	void	*p;
+	char	*ptr;
+	size_t	i;
 
-    char *ptr = (char *)p;
-    size_t i = 0;
-    while (i < num * size)
-    {
-        ptr[i] = 0;
-        i++;
-    }
-    return (p);
+	p = malloc(num * size);
+	if (!p)
+	{
+		return (NULL);
+	}
+	ptr = (char *)p;
+	i = 0;
+	while (i < num * size)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:24:07 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/18 13:51:52 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:21:53 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 void    ft_putchar(char c)
 {
     write (1,&c,1);
-}
-
-char *ft_wordlist(char *word)
-{
-    
 }
 
 int    ft_print_vocal(char *str, char vocal)
@@ -54,14 +49,10 @@ int    ft_print_vocal(char *str, char vocal)
                 str[i] = str[i] - 32;
            }
             ft_putchar(str[i]);
-            i++;                  
-                                     
-    }
-                          
+            i++;                                             
+    }                  
          return 0;         
 }
-
-
 
 int main (int argc, char **argv)
 {

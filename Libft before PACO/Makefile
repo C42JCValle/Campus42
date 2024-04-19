@@ -23,7 +23,8 @@ FILES = \
 	ft_strrchr.c\
 	ft_tolower.c\
 	ft_toupper.c\
-	ft_strdup.c\
+
+BUILD_DIR = build
 
 OBJ = $(FILES:.c=.o)
 

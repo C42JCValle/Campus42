@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvalle-d <jvalle-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 22:39:35 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/19 13:38:46 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/19 11:55:19 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/19 12:07:42 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	ft_strdup(const char *str)
 {
 	size_t	i;
+	size_t	len;
+	char	*cpy;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	if (str == NULL)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
+		return (NULL);
+	}
+	len = ft_strlen(str) + 1;
+	cpy = malloc(len * sizeof(char));
+	if (cpy == NULL)
+	{
+		return (NULL);
+	}
+	while (str[i] != '\0')
+	{
+		cpy[i] = str[i];
 		i++;
 	}
-	if (i == n)
+	cpy[i] = '\0';
 	{
-		return (0);
+		return (cpy);
 	}
-	return (0);
-}

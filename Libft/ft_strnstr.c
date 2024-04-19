@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:52:02 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 13:14:48 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:45:56 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,19 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {
 	const char	*s;
 	const char	*sub;
-	size_t		temp_len;
+	size_t		sub_len;
 
 	s = string;
 	sub = substring;
-	temp_len = len;
+	sub_len = ft_strlen(substring);
 	if (*sub == '\0')
 		return ((char *)s);
-	while (*s != '\0' && len > 0)
+	while (*s != '\0' && len >= sub_len)
 	{
-		while (*s != '\0' && *sub != '\0' && *s == *sub && len > 0)
-		{
-			s++;
-			sub++;
-			temp_len--;
-		}
-		if (*sub == '\0')
-		{
-			return ((char *)string);
-		}
+		if (ft_strncmp(s, sub, sub_len) == 0)
+			return ((char *)s);
 		s++;
 		len--;
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
-int main() 
-{
-    const char *string = "Hello, world! This is a test string.";
-    const char *substring = "H";
-    size_t len = 30;
-
-    char *result = ft_strnstr(string, substring, len);
-    if (result != NULL) {
-        printf("La subcadena '%s' se encontró en '%s'\n", substring, result);
-    } else {
-        printf("La subcadena '%s' no se encontró en '%s'\n", substring, string);
-    }
-
-    return 0;
-}
-*/

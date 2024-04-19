@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:18:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/19 14:06:03 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:24:49 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *string, const char *substring, size_t len);
 char	*ft_strrchr(const char *s, int c);
-char	*ft_strdup(const char *str);
+char	ft_strdup(const char *str);
 #endif

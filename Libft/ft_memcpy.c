@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:08:04 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 12:40:14 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:27:14 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	o = src;
 	i = 0;
+	if (src == NULL && dest == NULL)
+	{
+		return (NULL);
+	}
 	while (i < n)
 	{
 		d[i] = o[i];
