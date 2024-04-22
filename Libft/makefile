@@ -24,6 +24,7 @@ FILES = \
 	ft_tolower.c\
 	ft_toupper.c\
 	ft_strdup.c\
+	ft_substr.c\
 
 OBJ = $(FILES:.c=.o)
 
