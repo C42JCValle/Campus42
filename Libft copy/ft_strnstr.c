@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/22 11:37:40 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/15 11:52:02 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/19 13:45:56 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {
-	unsigned char	*str;
-	size_t			i;
+	const char	*s;
+	const char	*sub;
+	size_t		sub_len;
 
-	str = b;
-	i = 0;
-	while (i < len)
+	s = string;
+	sub = substring;
+	sub_len = ft_strlen(substring);
+	if (*sub == '\0')
+		return ((char *)s);
+	while (*s != '\0' && len >= sub_len)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		if (ft_strncmp(s, sub, sub_len) == 0)
+			return ((char *)s);
+		s++;
+		len--;
 	}
-	return (b);
+	return (NULL);
 }

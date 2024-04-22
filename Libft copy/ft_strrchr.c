@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/22 11:37:40 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/04/17 13:30:13 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/04/17 13:38:18 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*str;
-	size_t			i;
+	const char	*str;
 
-	str = b;
-	i = 0;
-	while (i < len)
+	str = s;
+	while (*str != '\0')
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		str++;
 	}
-	return (b);
+	while (str >= s)
+	{
+		if (*str == c)
+		{
+			return ((char *)str);
+		}
+		str--;
+	}
+	return (NULL);
 }
+/*
+
+int main(void)
+{
+    char *datos = ft_strrchr("JuJan", 'J');    
+    printf("%s\n", datos);
+    return 0;
+}
+*/

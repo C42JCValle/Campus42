@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:30:13 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/17 13:38:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:55:06 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,19 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (str >= s)
 	{
-		if (*str == c)
+		if (*str == (unsigned char)c)
 		{
 			return ((char *)str);
 		}
 		str--;
 	}
+	if (c == '\0')
+	{
+		return ((char *)str);
+	}
 	return (NULL);
 }
+
 /*
 
 int main(void)

@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:04:30 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/22 11:37:40 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:30:14 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	str = b;
 	i = 0;
-	while (i < len)
+	while (i < len && str[i] != '\0')
 	{
 		str[i] = (unsigned char)c;
 		i++;
 	}
-	return (b);
+	return (str);
 }
