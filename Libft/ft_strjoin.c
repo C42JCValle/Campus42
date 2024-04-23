@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:51:48 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/23 19:18:47 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:42:10 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ char	*ft_strjoin(char const *dest, char const *src)
 	ss[c] = '\0';
 	return ((char *)ss);
 }
-/*
+
 int main()
 {
-    char const *src = "Hola";
+    char const *src = "HolaMundoMun";
     char const *dest = "Mundo";
     printf("dest: %s\n", ft_strjoin(src,dest));
     return (0);
 }
-*/
