@@ -3,31 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:51:48 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/22 14:25:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:11:24 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_totallen(char const *s1, char const *s2)
+char    *ft_strjoin(char const *dest,char const *src)
 {
-    size_t len1;
-    size_t len2;
+	size_t	dest_len;
+	size_t	src_len;
+	char *ss;
+    size_t c;
+   
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	ss = (char *)malloc((dest_len + src_len)+ 1);
+    c = 0;
 
-    len1 = ft_strlen(s1);
-    len2 = ft_strlen(s2);
-    return (len1 + len2);
+    while (dest[c] < dest_len)
+    {
+        ss[c] = dest[c];
+        c++;
+    }
+    ss[c] = '\0';
+    return (char *)ss;
 }
 
-size_t ft_len2(char const *s2)
+int main()
 {
-    size_t len2a;
-
-    len2a = ft_strlen(s2);
-    return (len2a);
-    
+    char const *src = "Hola";
+    char const *dest = "Mundo";
+    printf("dest: %s\n", ft_strjoin(src,dest));
+    return (0);
 }
 
