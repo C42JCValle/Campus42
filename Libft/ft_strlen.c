@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:46:06 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/19 12:16:31 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:52:20 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	c;
+	size_t	c;
 
 	c = 0;
 	while (str[c] != '\0')

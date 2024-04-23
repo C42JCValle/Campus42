@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:18:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/22 14:32:06 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:08:52 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_calloc(size_t num, size_t size);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
@@ -41,5 +42,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *string, const char *substring, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *str);
-char    *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *dest, char const *src);
 #endif
