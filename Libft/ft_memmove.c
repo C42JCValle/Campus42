@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:19:06 by gacel             #+#    #+#             */
-/*   Updated: 2024/04/17 13:13:49 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:17:08 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 
 
@@ -50,5 +51,4 @@ int main() {
     ft_memmove(buffer + 5, buffer, 7);
     printf("%s\n", buffer);
     return 0;
-}
-*/
+}*/

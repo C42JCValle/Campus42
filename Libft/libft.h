@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:18:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/23 18:08:52 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:16:56 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *dest, char const *src);
+char    *ft_strtrim(char const  *s1, char const *set);
 #endif
