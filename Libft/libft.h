@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:18:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/25 18:29:01 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:56:23 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -45,4 +46,5 @@ char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *dest, char const *src);
 char	*ft_strtrim(char const *s1, char const *set);
+void    ft_putchar_fd(char c, int fd);
 #endif
