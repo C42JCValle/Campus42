@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:18:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/02 18:43:18 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:25:15 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	ft_putchar_fd(char c, int fd);
 char	*ft_itoa(int n);
 char	**ft_split(const char *s, char c);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif

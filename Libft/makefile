@@ -31,6 +31,7 @@ FILES = \
 	ft_split.c\
 	ft_itoa.c\
 	ft_striteri.c\
+	ft_strmapi.c\
 
 OBJ = $(FILES:.c=.o)
 
