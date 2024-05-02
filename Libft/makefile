@@ -30,6 +30,7 @@ FILES = \
 	ft_putchar_fd.c\
 	ft_split.c\
 	ft_itoa.c\
+	ft_striteri.c\
 
 OBJ = $(FILES:.c=.o)
 
