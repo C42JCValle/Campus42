@@ -6,55 +6,85 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:13:49 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/04/25 19:37:23 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:15:43 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char    *ft_split(char const *s, char c)
+static size_t	ft_toklen(const char *s, char c)
 {
-    size_t i;
-    size_t j;
-    size_t n;
-    char *result;
+	size_t	ret;
 
-    i = 0;
-    j = 0;
-    n = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] == c)
-        {
-            i++;
-            n++;
-        }
-        i++;
-    }
-    result = (char *)malloc(i - n);
-    i = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] == c)
-        {
-            i++;
-        }
-        else
-        {
-            result[j] = s[i];
-            j++;
-            i++;
-        }  
-    
-    }
-    result [j+1] = '\0';   
-    return (result);
+	ret = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			++ret;
+			while (*s && *s != c)
+				++s;
+		}
+		else
+			++s;
+	}
+	return (ret);
 }
+
+static void	free_split(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**ret;
+	size_t	i;
+	size_t	len;
+
+	if (!s || !(ret = malloc(sizeof(char *) * (ft_toklen(s, c) + 1))))
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			len = 0;
+			while (*s && *s != c && ++len)
+				++s;
+			if (!(ret[i++] = ft_substr(s - len, 0, len)))
+			{
+				free_split(ret);
+				return (0);
+			}
+		}
+		else
+			++s;
+	}
+	ret[i] = 0;
+	return (ret);
+}
+
 
 int main ()
 {
-    char const str[] = "1010000";
-    char c = '0';
-    printf("%s\n", ft_split(str, c));
-    return (0);
+    char const str[] = "Hola me llamo Juan Carlos";
+    char c = ' ';
+    char **split = ft_split(str, c);
+    int i = 0;
+    printf("%s \n", split[3]);
+
+    while (split[i])
+    {
+        printf("%s \n", split[i]);
+        i++;        
+    }
+    
+    return (0); 
 }

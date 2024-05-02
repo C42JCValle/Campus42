@@ -28,6 +28,8 @@ FILES = \
 	ft_strjoin.c\
 	ft_strtrim.c\
 	ft_putchar_fd.c\
+	ft_split.c\
+	ft_itoa.c\
 
 OBJ = $(FILES:.c=.o)
 
