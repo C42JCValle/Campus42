@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:19:52 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/02 16:58:57 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:38:38 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ static size_t	get_digits(int n)
 	size_t	i;
 
 	i = 1;
-	while (n /= 10)
-		i++;
+	while ((n / 10) != 0)
+	{
+		n = n / 10;
+		i++;	
+	}
 	return (i);
 }
 
@@ -35,7 +38,8 @@ char			*ft_itoa(int n)
 		num *= -1;
 		digits++;
 	}
-	if (!(str_num = (char *)malloc(sizeof(char) * (digits + 1))))
+	str_num = (char *)malloc(sizeof(char) * (digits + 1));
+	if (!(str_num))
 		return (NULL);
 	*(str_num + digits) = 0;
 	while (digits--)

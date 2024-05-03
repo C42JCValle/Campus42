@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 19:19:54 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/03 13:57:45 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/05/03 11:37:01 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/05/03 18:41:02 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	unsigned int	len;
-	char			*result;
-	unsigned int	i;
-
-	i = 0;
-	len = ft_strlen(s);
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s || !f)
-		return (NULL);
-	if (!result)
-		return (NULL);
-	while (i < len)
-	{
-		result[i] = f(i, s[i]);
-		i++;
-	}
-	result[len] = '\0';
-	return (result);
+void    ft_putnbr_fd(int n, int fd)
+{   
+    char *numero;
+    int i;
+    int int_min;
+    
+    numero = ft_itoa(n);
+    i = 0;
+    int_min = -2147483648;
+    if (n == int_min)
+     {
+        ft_putstr_fd("-2147483648", fd); // Imprimir directamente el valor mínimo
+        free(numero);
+        return;
+    }
+    while ( numero[i] != '\0') 
+    {
+        ft_putchar_fd(numero[i],fd);
+        i++;
+    }
+    free(numero);
 }

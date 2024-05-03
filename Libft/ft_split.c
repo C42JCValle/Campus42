@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:13:49 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/02 18:15:43 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/05/02 11:36:42 by jose-rig          #+#    #+#             */
+/*   Updated: 2024/05/03 14:07:07 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static size_t	ft_toklen(const char *s, char c)
@@ -48,7 +47,8 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	if (!s || !(ret = malloc(sizeof(char *) * (ft_toklen(s, c) + 1))))
+	ret = malloc(sizeof(char *) * (ft_toklen(s, c) + 1));
+	if (!s || !ret)
 		return (0);
 	i = 0;
 	while (*s)
@@ -58,33 +58,13 @@ char	**ft_split(const char *s, char c)
 			len = 0;
 			while (*s && *s != c && ++len)
 				++s;
-			if (!(ret[i++] = ft_substr(s - len, 0, len)))
-			{
-				free_split(ret);
-				return (0);
-			}
+			ret[i++] = ft_substr(s - len, 0, len);
+			if (!ret[i - 1])
+				return (free_split(ret), NULL);
 		}
 		else
 			++s;
 	}
 	ret[i] = 0;
 	return (ret);
-}
-
-
-int main ()
-{
-    char const str[] = "Hola me llamo Juan Carlos";
-    char c = ' ';
-    char **split = ft_split(str, c);
-    int i = 0;
-    printf("%s \n", split[3]);
-
-    while (split[i])
-    {
-        printf("%s \n", split[i]);
-        i++;        
-    }
-    
-    return (0); 
 }

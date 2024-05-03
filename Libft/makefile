@@ -32,6 +32,10 @@ FILES = \
 	ft_itoa.c\
 	ft_striteri.c\
 	ft_strmapi.c\
+    ft_putendl_fd.c\
+	ft_putstr_fd.c\
+	ft_putnbr_fd.c\
+	ft_lstnew.c\
 
 OBJ = $(FILES:.c=.o)
 
