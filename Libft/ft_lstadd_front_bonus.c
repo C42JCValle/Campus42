@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 11:37:01 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/06 10:42:42 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/05/06 11:27:01 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/05/06 12:32:10 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*numero;
-	int		i;
-	int		int_min;
-
-	numero = ft_itoa(n);
-	i = 0;
-	int_min = -2147483648;
-	if (n == int_min)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		free (numero);
-		return ;
-	}
-	while (numero[i] != '\0')
-	{
-		ft_putchar_fd (numero[i], fd);
-		i++;
-	}
-	free(numero);
+    if (lst && new)
+    {
+        new->next = *lst;
+        *lst = new;
+      
+    }   
 }

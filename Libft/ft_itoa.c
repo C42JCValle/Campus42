@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:19:52 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/03 18:38:38 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:46:34 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static size_t	get_digits(int n)
 	while ((n / 10) != 0)
 	{
 		n = n / 10;
-		i++;	
+		i++;
 	}
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*str_num;
 	size_t		digits;
