@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 11:36:42 by jose-rig          #+#    #+#             */
-/*   Updated: 2024/05/03 14:07:07 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:22:34 by gacel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_toklen(const char *s, char c)
+static size_t	ft_numwords(const char *s, char c)
 {
-	size_t	ret;
+	size_t	words;
 
-	ret = 0;
+	words = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
-			++ret;
+			words++;
 			while (*s && *s != c)
 				++s;
 		}
 		else
 			++s;
 	}
-	return (ret);
+	return (words);
 }
 
 static void	free_split(char **split)
