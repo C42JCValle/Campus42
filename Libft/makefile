@@ -2,11 +2,9 @@ NAME := libft.a
 CC := cc
 CC_FLAGS := -Wall -Werror -Wextra
 
-#AR SYSTEM
 AR := ar
 AR_FLAGS := -csr
 
-# Lista de archivos fuente (.c)
 FT_FILES := ft_atoi.c \
 ft_bzero.c \
 ft_calloc.c \
@@ -52,33 +50,30 @@ ft_lstdelone_bonus.c \
 ft_lstiter_bonus.c \
 ft_lstmap_bonus.c \
 
-#Archivo de testeo para funciones
 FT_FTEST := main.c
 
-#Solamente para usar la libreria en main.c
 INCLUDES := libft.h
 
-# Generar nombres de archivos objeto (.o)
 OBJ := $(FT_FILES:%.c=%.o)
 OBJ_BONUS := $(FT_FILES_BONUS:%.c=%.o)
-#Creación librería
+
 all: $(NAME)
 $(NAME) : $(OBJ)
 	$(AR) $(AR_FLAGS) $(NAME) $?
 
-#Creación archivos objeto
+
 %.o: %.c
 	$(CC) $(CC_FLAGS) -c -o $@ $<
 
-#Clean
+
 clean :
 	rm -f $(OBJ) $(OBJ_BONUS)
 
-#FClean
+
 fclean : clean
 	rm -f $(NAME)
 
-#FClean y rehacer todo
+
 re : fclean all
 
 bonus: $(NAME)
