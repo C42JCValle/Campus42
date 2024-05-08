@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:37:01 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/06 10:42:42 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:20:02 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	*numero;
 	int		i;
-	int		int_min;
+	long	int_min;
 
 	numero = ft_itoa(n);
 	i = 0;

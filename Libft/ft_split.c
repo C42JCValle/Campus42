@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacel <gacel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 11:36:42 by jose-rig          #+#    #+#             */
-/*   Updated: 2024/05/05 19:22:34 by gacel            ###   ########.fr       */
+/*   Created: 2024/05/02 11:36:42 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/05/08 12:26:54 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	ret = malloc(sizeof(char *) * (ft_toklen(s, c) + 1));
+	ret = malloc(sizeof(char *) * (ft_numwords(s, c) + 1));
 	if (!s || !ret)
 		return (0);
 	i = 0;

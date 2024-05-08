@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:19:52 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/06 10:46:34 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:25:59 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 		digits++;
 	}
 	str_num = (char *)malloc(sizeof(char) * (digits + 1));
-	if (!(str_num))
+	if (!str_num)
 		return (NULL);
 	*(str_num + digits) = 0;
 	while (digits--)
@@ -51,13 +51,3 @@ char	*ft_itoa(int n)
 		*(str_num + 0) = '-';
 	return (str_num);
 }
-/*
-int main ()
-{
-	int	x;
-	x = (-1222131);
-
-	printf("%s",ft_itoa(x));
-	return (0);
-}
-*/

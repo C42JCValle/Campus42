@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:10:41 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/06 10:51:29 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:24:56 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_list	*ft_lstnew(void *content)
 
 	nodo = (t_list *)malloc(sizeof(t_list));
 	if (!nodo)
+	{
+		free(nodo);
 		return (NULL);
+	}
 	nodo->content = content;
 	nodo->next = NULL;
 	return (nodo);
