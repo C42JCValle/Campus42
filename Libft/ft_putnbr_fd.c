@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:37:01 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/08 12:20:02 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:11:16 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*numero;
-	int		i;
-	long	int_min;
+	long	num;
+	char	*str_num;
+	size_t	i;
 
-	numero = ft_itoa(n);
-	i = 0;
-	int_min = -2147483648;
-	if (n == int_min)
+	num = n;
+	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
-		free (numero);
 		return ;
 	}
-	while (numero[i] != '\0')
+	if (num < 0)
 	{
-		ft_putchar_fd (numero[i], fd);
+		ft_putchar_fd('-', fd);
+		num = -num;
+	}
+	str_num = ft_itoa(num);
+	if (!str_num)
+		return ;
+	i = 0;
+	while (str_num[i])
+	{
+		ft_putchar_fd(str_num[i], fd);
 		i++;
 	}
-	free(numero);
+	free(str_num);
 }
