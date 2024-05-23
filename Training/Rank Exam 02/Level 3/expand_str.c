@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   epur_str.c                                         :+:      :+:    :+:   */
+/*   expand_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 19:25:45 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/05/23 13:11:50 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/05/23 12:46:43 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/05/23 18:46:14 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <unistd.h>
+#  include <unistd.h>
 
 void    ft_putchar (char c)
 {
@@ -36,44 +36,44 @@ char     *ft_checkfinal (char *str)
     return (str);    
 }
 
-void    ft_epur (char *str)
+
+void    ft_expand (char *str)
 {
     int i;
-    int last;
-
+    int space;
+    
     i = 0;
-
-    str = ft_checkfinal(str);
-    if (str[0] == ' ')
+    str = ft_checkfinal(str);    
+    while (str[i] != '\0' && str[i] == ' ') //hasta aqui dom
     {
         i++;
     }
-       
     while (str[i] != '\0')
-    {
-        int spaces = 0;
-               
-        if (str[i] == ' ' && str[i - 1] == ' ')
-        {
-            spaces++;          
-        }
-        if (spaces < 1)
+    {  
+        if (str[i] != ' ')
         {
             ft_putchar(str[i]);
+            i++;
         }
-        i++;      
+        else if (str[i] == ' ')
+        {
+            space = 3;
+            while (space--)
+            {
+                ft_putchar(str[i]);                
+            }
+            while (str[i] != '\0' && str[i] == ' ')
+            {
+                i++;
+            }                      
+        }        
     }
-}    
+}
 
 int main (int argc, char **argv)
 {
-    if (argc != 2)
-    {
-        ft_putchar('\n');
-        return (1);
-    }
-
-    ft_epur(argv[1]);
-    ft_putchar ('\n');
-    return (0);
+    ft_expand (argv[1]);
+    return (0); 
+    
 }
+    
