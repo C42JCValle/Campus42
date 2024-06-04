@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot13.c                                            :+:      :+:    :+:   */
+/*   searchandreplace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 19:25:52 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/06/03 12:40:06 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/05/28 19:43:46 by jvalle-d          #+#    #+#             */
+/*   Updated: 2024/05/28 19:47:19 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,24 @@ void    ft_putchar (char c)
     write (1, &c, 1);
 }
 
-void    ft_rot13 (char *str)
+void    ft_search (char *str, char n, char i)
 {
     int c;
 
     c = 0;
     while (str[c] != '\0')
     {
-        if (str[c] >= 'a' && str[c] <= 'm' || str[c] >= 'A' && str[c] <= 'M')
+        if (str[c] == n)
         {
-            str[c] += 13;
-        }
-        else if (str[c] >= 'n' && str[c] <= 'z' || str[c] >= 'N' && str[c] <= 'Z')
-        {
-            str[c] -= 13;
+            str[c] = i;
         }
         ft_putchar (str[c]);
-        c++;        
+        c++;
     }
-    
 }
 
 int main (int argc, char **argv)
 {
-    ft_rot13(argv[1]);
+    ft_search (argv[1],argv[2][0],argv[3][0]);
     return 0;
-    
 }
