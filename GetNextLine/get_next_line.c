@@ -3,152 +3,108 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jose-rig <jose-rig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 18:18:48 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/06/03 10:57:52 by jvalle-d         ###   ########.fr       */
+/*   Created: 2024/06/05 16:24:24 by jose-rig          #+#    #+#             */
+/*   Updated: 2024/06/05 17:10:13 by jose-rig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_joinfree(char *buffer, char *aux)
 {
-	size_t	c;
+	char	*temp;
 
-	c = 0;
-	while (str[c] != '\0')
-	{
-		c++;
-	}
-	return (c);
+	temp = ft_strjoin(buffer, aux);
+	free(buffer);
+	return (temp);
 }
-char	*ft_strjoin(char const *dest, char const *src)
-{
-	size_t	dest_len;
-	size_t	src_len;
-	char	*ss;
-	size_t	c;
 
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	ss = (char *)malloc(dest_len + src_len + 1);
-	c = 0;
-	if (!ss)
+char	*ft_readbuffer(char *buffer, int fd)
+{
+	int		i;
+	char	*aux;
+
+	if (!buffer)
+	{
+		buffer = ft_calloc(1, 1);
+		if (!buffer)
+			return (NULL);
+	}
+	aux = ft_calloc(BUFFER_SIZE + 1, 1);
+	i = 1;
+	while ((!ft_strchr(aux, '\n')) && i > 0)
+	{
+		i = read(fd, aux, BUFFER_SIZE);
+		if (i == -1)
+			return (free(aux), NULL);
+		aux[i] = '\0';
+		buffer = ft_joinfree(buffer, aux);
+		if (!buffer)
+			return (NULL);
+	}
+	free(aux);
+	return (buffer);
+}
+
+char	*ft_readline(char *buffer)
+{
+	char	*line;
+	int		i;
+
+	i = 0;
+	if (!buffer[i])
 		return (NULL);
-	while (dest[c] != '\0')
+	while (buffer[i] != '\0' && buffer[i] != '\n')
+		i++;
+	line = (char *)ft_calloc(i + 1 + (buffer[i] == '\n'), 1);
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (buffer[i] != '\n' && buffer[i])
 	{
-		ss[c] = dest[c];
-		c++;
+		line[i] = buffer[i];
+		i++;
 	}
-	while (src[c - dest_len] != '\0')
-	{
-		ss[c] = src[c - dest_len];
-		c++;
-	}
-	ss[c] = '\0';
-	return ((char *)ss);
-}
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s != '\0')
-	{
-		if (*s == (char)c)
-		{
-			return ((char *)s);
-		}
-		s++;
-	}
-	if ((char)c == '\0')
-	{
-		return ((char *)s);
-	}
-	return (NULL);
-}
-char    *ft_readbuffer (int fd, char *buffer)
-{
-    char    *aux;
-    int     bsize;
-
-    bsize = 1;
-    while (bsize > 0 && !ft_strchr(buffer, '\n'))                   
-    {
-        aux = (char *)malloc(BUFFER_SIZE + 1);                  //
-        if (!aux)
-            return NULL;      
-        bsize = read(fd, aux, BUFFER_SIZE);                     //La función read da como resultado un int determinando el final del BUFFER SIZE.   
-        aux[bsize] = '\0';
-        buffer = ft_strjoin (buffer,aux);                       //usamos strjoin para sumar aux a buffer podríamos usar cualquier técnica que cumpla esto.
-        free(aux);
-        aux = NULL;                   
-    }
-    return (buffer);
+	if (buffer[i] == '\n')
+		line[i] = '\n';
+	return (line);
 }
 
-char    *ft_readline (char *buffer)
+char	*ft_updatebuffer(char *buffer)
 {
-    int i;
-    char *linea;
+	int		i;
+	int		j;
+	char	*update;
 
-    while (buffer[i] != '\n' && buffer[i] != '\0')
-    {        
-        i++;        
-    }
-    linea = (char *)malloc(i + 1);
-    
-    if (!linea)
-        return (NULL);
-        
-    i = 0;
-    while (buffer[i] != '\n' && buffer[i] != '\0')
-    {
-        linea[i] = buffer[i];
-        i++;
-    }
-    return (linea);    
+	i = 0;
+	while (buffer[i] && buffer[i] != '\n')
+		i++;
+	if (!buffer[i])
+		return (ft_free(buffer));
+	update = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+	if (!update)
+		return (ft_free(buffer));
+	i++;
+	j = 0;
+	while (buffer[i])
+		update[j++] = buffer[i++];
+	free(buffer);
+	return (update);
 }
 
-char    *get_next_line (int fd)
+char	*get_next_line(int fd)
 {
-    int i;
-    static char    *buffer;
-    char *linea;
+	static char	*buffer;
+	char		*line;
 
-    if (!buffer)                                            //Si buffer no existe reservamos espacio en memoria para crearlo.
-    {
-        buffer = (char *)malloc(BUFFER_SIZE + 1);           // Tamaño del buffer + 1 para '\0'    
-        if (!buffer)
-            return NULL;           
-    }
-    i = 0;
-    buffer = ft_readbuffer (fd, buffer);                    //buffer recoge el resultado de la funcion readbuffer esta recoge la info del fd y la aloja en buffer.    
-    linea = ft_readline (buffer);                           // aquí la funcion readline devolverá un puntero cuando encuentre \n en la info de buffer.
-    while (buffer[i] != '\n' && buffer[i] != '\0')          //buscamos el siguiente salto de línea o null.
-    {
-        i++;
-    }
-    buffer = buffer + i + 1;                                //adelantamos el puntero hasta la siguiente línea o final. ('/n' + 1).    
-    return (linea);                                         //devolvemos la línea filtrada para su impresion en la main.
-    
-}
-
-int main (int argc, char **argv)
-{
-    int fd;                                 //file descriptor
-    char *linea;                            // puntero para almacenar la linea
-    
-    fd = open ("prueba.txt", O_RDONLY);     //fd es un int resultante de la funcion open, flag O_RDONLY para abrir con permisos de lectura    
-    linea = get_next_line(fd);              // llamamos a get_next_line que nos devolverá la línea    
-
-
-    printf("Línea 1:%s\n",linea);
-    linea = get_next_line (fd);
-    printf("Línea 2:%s\n",linea);
-    linea = get_next_line (fd);
-    printf("Línea 3:%s\n",linea);
-    linea = get_next_line (fd);
-    printf("Línea 4:%s\n",linea);
-    linea = get_next_line (fd);
-    close(fd);
-    return (0);
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
+	buffer = ft_readbuffer(buffer, fd);
+	if (!buffer)
+		return (ft_free(buffer));
+	line = ft_readline(buffer);
+	buffer = ft_updatebuffer(buffer);
+	return (line);
 }
