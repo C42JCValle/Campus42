@@ -13,7 +13,8 @@ static int count_words(char *str)
         {
             in_word = 0;
         }
-        celse if (in_word == 0) {
+        else if (in_word == 0) 
+        {
             in_word = 1;
             count++;
         }
