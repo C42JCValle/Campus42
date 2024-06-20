@@ -6,7 +6,7 @@
 /*   By: jvalle-d <jvalle-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:40:06 by jvalle-d          #+#    #+#             */
-/*   Updated: 2024/06/12 10:43:06 by jvalle-d         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:33:26 by jvalle-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int main ()
 {
 	int fd;
@@ -118,10 +118,9 @@ int main ()
 	
 	while ((print = get_next_line(fd)) != NULL)
 	{
-		printf("Linea: %s\n",print);
+		printf("\033[35m Mi Linea en Amarillo:%s\n",print);
 		free (print);	
 	}
 	close (fd);
 	return (0);
 }
-*/
